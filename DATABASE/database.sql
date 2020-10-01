@@ -6,7 +6,7 @@ create table Accounts (
         primary key (User_Name)
     );
  
-    create table Order_Details (
+    create table OrdDeta (
         ID varchar(50) not null,
         Amount double precision not null,
         Price double precision not null,
@@ -40,12 +40,12 @@ create table Accounts (
     alter table Orders
         add constraint UK_sxhpvsj665kmi4f7jdu9d2791  unique (Order_Num);
  
-    alter table Order_Details
+    alter table OrdDeta
         add constraint ORDER_DETAIL_ORD_FK
         foreign key (ORDER_ID)
         references Orders (ID);
  
-    alter table Order_Details
+    alter table OrdDeta
         add constraint ORDER_DETAIL_PROD_FK
         foreign key (PRODUCT_ID)
         references Products (Code);
